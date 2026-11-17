@@ -82,7 +82,7 @@
         </section>
 
         <section class="view" id="view-projects">
-          <div class="page-intro"><div><p class="eyebrow">PROJECTS & BUDGET</p><h1>โครงการและงบประมาณ</h1><p class="muted">ทะเบียนโครงการในพื้นที่ทำงาน พร้อมเชื่อมประเด็นและตัวชี้วัด</p></div><button class="button button-primary" data-action="add-project"><span>＋</span> เพิ่มโครงการ</button></div>
+          <div class="page-intro"><div><p class="eyebrow">PROJECTS & BUDGET</p><h1>โครงการและงบประมาณ</h1><p class="muted">รายการตั้งต้น 30 โครงการจากตารางท้ายเล่ม พร้อมงบประมาณตามแผนรายปีและตัวชี้วัดที่เชื่อมโยง</p></div><button class="button button-primary" data-action="add-project"><span>＋</span> เพิ่มโครงการ</button></div>
           <div class="filter-bar"><label class="search-box table-search"><span>⌕</span><input id="project-search" type="search" placeholder="ค้นหาชื่อโครงการหรือผู้รับผิดชอบ"></label><select id="project-status-filter"><option value="all">ทุกสถานะ</option><option value="กำลังดำเนินการ">กำลังดำเนินการ</option><option value="รอเริ่ม">รอเริ่ม</option><option value="เสร็จแล้ว">เสร็จแล้ว</option></select><button class="button button-secondary" id="export-projects">ส่งออก CSV</button></div>
           <div class="project-grid" id="project-grid"></div>
           <div class="empty-state hidden" id="projects-empty"><span>▤</span><strong>ยังไม่มีโครงการในพื้นที่ทำงาน</strong><p>เพิ่มโครงการเพื่อเริ่มเชื่อมโยงกับประเด็นพัฒนาและตัวชี้วัด</p><button class="button button-primary" data-action="add-project">เพิ่มโครงการ</button></div>
@@ -112,6 +112,7 @@
   <dialog id="form-dialog" class="form-dialog"><form id="form-content" method="dialog"><div class="dialog-head"><div><p class="eyebrow" id="dialog-eyebrow">NEW ITEM</p><h2 id="dialog-title">เพิ่มรายการ</h2></div><button type="button" class="dialog-close" id="dialog-close" aria-label="ปิด">×</button></div><div id="dialog-fields" class="dialog-fields"></div><div class="dialog-actions"><button type="button" class="button button-secondary" id="dialog-cancel">ยกเลิก</button><button type="submit" class="button button-primary" id="dialog-save">บันทึก</button></div></form></dialog>
   <dialog id="backup-dialog" class="form-dialog"><form method="dialog"><div class="dialog-head"><div><p class="eyebrow">DATA OPTIONS</p><h2>สำรอง / นำเข้าข้อมูล</h2></div><button type="button" class="dialog-close" data-close-backup aria-label="ปิด">×</button></div><p class="dialog-description">ต้นแบบนี้เก็บข้อมูลในเบราว์เซอร์เครื่องนี้ คุณสามารถดาวน์โหลดไฟล์สำรอง หรือเลือกไฟล์เดิมเพื่อนำข้อมูลกลับเข้าได้</p><div class="backup-actions"><button type="button" class="button button-primary" id="download-backup">ดาวน์โหลดไฟล์สำรอง JSON</button><label class="button button-secondary file-label">เลือกไฟล์ JSON<input type="file" id="restore-file" accept="application/json"></label></div><p class="privacy-hint"><span>ⓘ</span> การเผยแพร่บน GitHub Pages เป็นเว็บไซต์แบบคงที่ ข้อมูลยังไม่ถูกแชร์ข้ามอุปกรณ์</p></form></dialog>
   <script src="plan-data.js"></script>
+  <script src="projects-data.js"></script>
   <script src="app.js"></script>
 </body>
 </html>

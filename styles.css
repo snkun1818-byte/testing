@@ -318,6 +318,25 @@ tbody tr:last-child td { border-bottom:0; } .indicator-name { font-weight:700; c
   .plan-approach-list p { font-size:14px; line-height:1.85; }
   .plan-source-note { font-size:12px; }
 }
+
+/* Clear return controls and five-year project budget schedule */
+.plan-back-button { display:inline-flex; align-items:center; gap:8px; margin:0 0 10px; padding:12px 17px; border:1px solid #80ba91; border-radius:13px; color:#fff; background:#145b42; box-shadow:0 5px 13px rgba(18,82,57,.16); font:inherit; font-size:16px; font-weight:750; cursor:pointer; }
+.plan-back-button:hover { color:#fff; background:#0c4936; }
+.plan-back-button:focus-visible { outline:3px solid #e6b344; outline-offset:3px; }
+.plan-breadcrumb { margin:0 0 16px; padding:5px 0; }
+.project-budget-details { margin:12px 0; padding:11px 13px; border:1px solid #d7e8d5; border-radius:13px; background:#f7fbf4; }
+.project-budget-details summary { display:flex; align-items:center; justify-content:space-between; gap:8px; color:#236343; font-size:14px; font-weight:750; cursor:pointer; }
+.project-year-grid { display:grid; grid-template-columns:repeat(5,minmax(0,1fr)); gap:7px; margin-top:11px; }
+.project-year-grid>div { display:grid; gap:4px; padding:8px 6px; border-radius:9px; background:#e9f4e4; text-align:center; }
+.project-year-grid span { color:#587263; font-size:11px; }
+.project-year-grid strong { color:#1d5038; font-size:13px; }
+.project-meta .project-budget { color:#54715f; font-size:12px; }
+@media(max-width:600px) {
+  .plan-back-button { width:100%; justify-content:center; margin-bottom:10px; font-size:15px; }
+  .project-year-grid { grid-template-columns:repeat(3,minmax(0,1fr)); }
+  .project-year-grid span { font-size:10px; }
+  .project-year-grid strong { font-size:12px; }
+}
 @media(max-width:390px) {
  .content-wrap{padding-left:11px;padding-right:11px}.hero-copy{max-width:78%}.hero-copy h2{font-size:19px}
  .stat-card{padding:10px}.stat-caption{font-size:9px}.stat-foot{font-size:7px}.notes-grid{grid-template-columns:1fr}
