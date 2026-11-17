@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#123d34">
+  <meta name="description" content="PlanFlow ระบบจัดการแผน โครงการ ติดตามผล และงานส่วนตัว กองแผนงาน กรมส่งเสริมการเกษตร">
+  <title>PlanFlow | กองแผนงาน</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" aria-label="เมนูหลัก">
+      <a class="brand" href="#home" aria-label="PlanFlow หน้าหลัก">
+        <span class="brand-mark">P<span>F</span></span>
+        <span class="brand-copy"><strong>PlanFlow</strong><small>กองแผนงาน · DOAE</small></span>
+      </a>
+      <div class="side-label">WORKSPACE</div>
+      <nav class="main-nav">
+        <button class="nav-item active" data-view="home"><span class="nav-icon">⌂</span><span>ภาพรวม</span></button>
+        <button class="nav-item" data-view="plan"><span class="nav-icon">◎</span><span>แผนและตัวชี้วัด</span></button>
+        <button class="nav-item" data-view="projects"><span class="nav-icon">▤</span><span>โครงการและงบประมาณ</span></button>
+        <button class="nav-item" data-view="followup"><span class="nav-icon">◷</span><span>ติดตามงาน</span><span class="nav-count" id="nav-task-count">0</span></button>
+        <button class="nav-item" data-view="personal"><span class="nav-icon">✦</span><span>พื้นที่ส่วนตัว</span></button>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="side-note"><span class="note-leaf">✿</span><div><strong>แผน 5 ปี</strong><small>พ.ศ. 2571–2575</small></div></div>
+        <button class="nav-item" id="backup-button"><span class="nav-icon">⚙</span><span>สำรอง / นำเข้าข้อมูล</span></button>
+        <div class="profile-mini"><div class="avatar">ผ</div><div><strong>พื้นที่ทำงานของฉัน</strong><small>บันทึกในอุปกรณ์นี้</small></div><span class="online-dot"></span></div>
+      </div>
+    </aside>
+
+    <main class="main-area">
+      <header class="topbar">
+        <div class="breadcrumbs"><span>กองแผนงาน</span><span class="crumb-sep">/</span><strong id="topbar-title">ภาพรวม</strong></div>
+        <div class="top-actions">
+          <label class="search-box" id="global-search-wrap"><span>⌕</span><input id="global-search" type="search" placeholder="ค้นหาโครงการ งาน โน้ต..." aria-label="ค้นหา"></label>
+          <button class="icon-button" id="quick-add" aria-label="เพิ่มรายการ" title="เพิ่มรายการ">＋</button>
+          <button class="user-button" aria-label="พื้นที่ส่วนตัว"><span class="avatar avatar-small">ผ</span><span class="user-name">พื้นที่ของฉัน</span><span class="chevron">⌄</span></button>
+        </div>
+      </header>
+
+      <div class="content-wrap">
+        <section class="view active" id="view-home">
+          <div class="welcome-row">
+            <div><p class="eyebrow">PLANFLOW · WORKSPACE</p><h1>สวัสดีครับ <span class="wave">✦</span></h1><p class="muted">ติดตามแผนให้เห็นความก้าวหน้า จัดการงานของคุณได้ในที่เดียว</p></div>
+            <button class="button button-primary" data-action="add-task"><span>＋</span> เพิ่มงานส่วนตัว</button>
+          </div>
+          <div class="hero-card">
+            <div class="hero-copy"><div class="hero-tag"><span class="tag-dot"></span> แผนปฏิบัติราชการ 5 ปี</div><h2>มั่นคง · มั่งคั่ง<br><em>อัจฉริยะ · ยั่งยืน</em></h2><p>ภาคการเกษตรมั่นคง เกษตรกรมั่งคั่ง ขับเคลื่อนสู่เกษตรอัจฉริยะและเกษตรมูลค่าสูงอย่างยั่งยืน</p><button class="hero-link" data-go="plan">ดูแผนและตัวชี้วัด <span>→</span></button></div>
+            <div class="hero-art" aria-hidden="true"><div class="sun"></div><div class="hill hill-back"></div><div class="hill hill-front"></div><div class="field-line field-one"></div><div class="field-line field-two"></div><div class="field-line field-three"></div><div class="plant plant-one">❧</div><div class="plant plant-two">❧</div><div class="hero-year">2571 <span>—</span> 2575</div></div>
+          </div>
+
+          <div class="stat-grid">
+            <article class="stat-card"><div class="stat-top"><span class="stat-icon green">◎</span><span class="stat-caption">แผนระยะ 5 ปี</span></div><div class="stat-number">5 <small>ประเด็น</small></div><div class="stat-foot"><span class="status-dot green-dot"></span>เชื่อมโยงกลยุทธ์และโครงการ</div></article>
+            <article class="stat-card"><div class="stat-top"><span class="stat-icon blue">◈</span><span class="stat-caption">ตัวชี้วัดหลัก</span></div><div class="stat-number">7 <small>ตัวชี้วัด</small></div><div class="stat-foot">ค่าเป้าหมายตามแผน พ.ศ. 2571–2575</div></article>
+            <article class="stat-card"><div class="stat-top"><span class="stat-icon amber">▤</span><span class="stat-caption">โครงการในพื้นที่ทำงาน</span></div><div class="stat-number" id="project-stat">0 <small>โครงการ</small></div><div class="stat-foot">เพิ่มโครงการและเชื่อมกับตัวชี้วัด</div></article>
+            <article class="stat-card"><div class="stat-top"><span class="stat-icon rose">✓</span><span class="stat-caption">งานของฉันที่ยังไม่เสร็จ</span></div><div class="stat-number" id="task-stat">0 <small>รายการ</small></div><div class="stat-foot" id="task-foot">จัดงานและกำหนดส่งจากพื้นที่ส่วนตัว</div></article>
+          </div>
+
+          <div class="section-heading"><div><p class="eyebrow">YOUR DAY</p><h2>วันนี้ของฉัน</h2></div><button class="text-button" data-go="personal">เปิดพื้นที่ส่วนตัว <span>→</span></button></div>
+          <div class="home-grid">
+            <article class="panel task-panel"><div class="panel-heading"><div><h3>งานที่ต้องทำ</h3><p>เช็กลิสต์ส่วนตัวและงานที่ได้รับมอบหมาย</p></div><button class="small-add" data-action="add-task" aria-label="เพิ่มงาน">＋</button></div><div id="home-task-list" class="compact-list"></div></article>
+            <article class="panel calendar-panel"><div class="panel-heading"><div><h3>กำหนดการใกล้ถึง</h3><p>นัดหมายและวันครบกำหนด</p></div><button class="text-button" data-go="personal" data-tab="calendar">ดูปฏิทิน</button></div><div id="home-event-list" class="event-list"></div></article>
+          </div>
+
+          <div class="section-heading"><div><p class="eyebrow">PLAN AT A GLANCE</p><h2>ประเด็นการพัฒนา</h2></div><button class="text-button" data-go="plan">ดูรายละเอียดแผน <span>→</span></button></div>
+          <div class="strategy-grid" id="home-strategies"></div>
+          <div class="footer-note">PlanFlow · ต้นแบบระบบภายในกองแผนงาน <span>ข้อมูลตัวอย่างและข้อมูลที่ผู้ใช้บันทึกจัดเก็บในอุปกรณ์นี้</span></div>
+        </section>
+
+        <section class="view" id="view-plan">
+          <div class="page-intro"><div><p class="eyebrow">PLAN MANAGEMENT · 2571—2575</p><h1>แผนและตัวชี้วัด</h1><p class="muted">เชื่อมประเด็นพัฒนา กลยุทธ์ ตัวชี้วัด และค่าเป้าหมายในแผน 5 ปี</p></div><button class="button button-secondary" id="export-indicators">ดาวน์โหลดตัวชี้วัด</button></div>
+          <div class="vision-banner"><span class="vision-icon">✳</span><div><small>วิสัยทัศน์กรมส่งเสริมการเกษตร</small><strong>ภาคการเกษตรมั่นคง เกษตรกรมั่งคั่ง ขับเคลื่อนประเทศให้เปลี่ยนผ่านสู่ระบบการเกษตรอัจฉริยะ และเกษตรมูลค่าสูงอย่างยั่งยืน ภายในปี 2575</strong></div></div>
+          <div class="strategy-list" id="strategy-list"></div>
+          <div class="section-heading section-heading-table"><div><p class="eyebrow">CORE OUTCOMES</p><h2>ตัวชี้วัดผลลัพธ์หลัก</h2><p class="muted">บันทึกผลล่าสุดและความก้าวหน้าเมื่อได้รับรายงานจากหน่วยงาน</p></div><div class="table-actions"><select id="indicator-filter" aria-label="กรองประเด็น"><option value="all">ทุกประเด็น</option><option value="1">ประเด็นที่ 1</option><option value="2">ประเด็นที่ 2</option><option value="3">ประเด็นที่ 3</option><option value="4">ประเด็นที่ 4</option><option value="5">ประเด็นที่ 5</option></select></div></div>
+          <div class="panel table-panel"><div class="table-scroll"><table><thead><tr><th>ตัวชี้วัด</th><th>ค่าเป้าหมายตามแผน</th><th>ความก้าวหน้า</th><th>ผลล่าสุด</th><th></th></tr></thead><tbody id="indicator-rows"></tbody></table></div></div>
+          <p class="disclaimer">ค่าเป้าหมายแสดงตามสาระในแผนฉบับที่แนบ การกำหนดวิธีคำนวณ รอบรายงาน และผู้รับผิดชอบรายตัวชี้วัดสามารถเพิ่มเติมในระบบได้</p>
+        </section>
+
+        <section class="view" id="view-projects">
+          <div class="page-intro"><div><p class="eyebrow">PROJECTS & BUDGET</p><h1>โครงการและงบประมาณ</h1><p class="muted">ทะเบียนโครงการในพื้นที่ทำงาน พร้อมเชื่อมประเด็นและตัวชี้วัด</p></div><button class="button button-primary" data-action="add-project"><span>＋</span> เพิ่มโครงการ</button></div>
+          <div class="filter-bar"><label class="search-box table-search"><span>⌕</span><input id="project-search" type="search" placeholder="ค้นหาชื่อโครงการหรือผู้รับผิดชอบ"></label><select id="project-status-filter"><option value="all">ทุกสถานะ</option><option value="กำลังดำเนินการ">กำลังดำเนินการ</option><option value="รอเริ่ม">รอเริ่ม</option><option value="เสร็จแล้ว">เสร็จแล้ว</option></select><button class="button button-secondary" id="export-projects">ส่งออก CSV</button></div>
+          <div class="project-grid" id="project-grid"></div>
+          <div class="empty-state hidden" id="projects-empty"><span>▤</span><strong>ยังไม่มีโครงการในพื้นที่ทำงาน</strong><p>เพิ่มโครงการเพื่อเริ่มเชื่อมโยงกับประเด็นพัฒนาและตัวชี้วัด</p><button class="button button-primary" data-action="add-project">เพิ่มโครงการ</button></div>
+        </section>
+
+        <section class="view" id="view-followup">
+          <div class="page-intro"><div><p class="eyebrow">FOLLOW-UP</p><h1>ติดตามงาน</h1><p class="muted">รวมรายการงานที่คุณสร้างและรายการที่ต้องติดตาม</p></div><button class="button button-primary" data-action="add-task"><span>＋</span> เพิ่มงาน</button></div>
+          <div class="task-summary-grid"><div class="summary-chip"><span class="summary-icon">◷</span><div><small>ยังไม่เสร็จ</small><strong id="todo-open-count">0</strong></div></div><div class="summary-chip"><span class="summary-icon amber">!</span><div><small>เลยกำหนด</small><strong id="todo-late-count">0</strong></div></div><div class="summary-chip"><span class="summary-icon green">✓</span><div><small>เสร็จแล้ว</small><strong id="todo-done-count">0</strong></div></div></div>
+          <div class="filter-bar"><div class="filter-pills" id="task-filters"><button class="filter-pill active" data-filter="all">ทั้งหมด</button><button class="filter-pill" data-filter="open">ยังไม่เสร็จ</button><button class="filter-pill" data-filter="done">เสร็จแล้ว</button></div><button class="button button-secondary" id="export-tasks">ส่งออกรายการงาน</button></div>
+          <div class="panel task-table-panel"><div id="task-list-full" class="full-task-list"></div></div>
+        </section>
+
+        <section class="view" id="view-personal">
+          <div class="page-intro"><div><p class="eyebrow">PERSONAL WORKSPACE</p><h1>พื้นที่ส่วนตัว</h1><p class="muted">จัดการโน้ต ปฏิทิน และเช็กลิสต์ของคุณในที่เดียว</p></div><button class="button button-primary" id="personal-add"><span>＋</span> <span id="personal-add-label">จดโน้ต</span></button></div>
+          <div class="personal-tabs" role="tablist"><button class="personal-tab active" data-personal-tab="notes">โน้ตส่วนตัว <span id="note-count">0</span></button><button class="personal-tab" data-personal-tab="calendar">ปฏิทินของฉัน</button><button class="personal-tab" data-personal-tab="todos">เช็กลิสต์งาน <span id="personal-todo-count">0</span></button></div>
+          <div class="personal-pane active" id="personal-notes"><div class="notes-toolbar"><div><h2>โน้ตของฉัน</h2><p>โน้ตเป็นส่วนตัว เว้นแต่คุณเลือกแชร์</p></div><label class="search-box table-search"><span>⌕</span><input id="note-search" type="search" placeholder="ค้นหาโน้ต"></label></div><div class="notes-grid" id="notes-grid"></div><div class="empty-state hidden" id="notes-empty"><span>✎</span><strong>ยังไม่มีโน้ต</strong><p>บันทึกไอเดีย สรุปประชุม หรือสิ่งที่ต้องจำ</p><button class="button button-primary" data-action="add-note">จดโน้ตแรก</button></div></div>
+          <div class="personal-pane" id="personal-calendar"><div class="calendar-toolbar"><div><h2 id="calendar-month-title"></h2><p>นัดหมายและกำหนดส่งของคุณ</p></div><div class="calendar-controls"><button class="icon-button subtle" id="calendar-prev" aria-label="เดือนก่อน">‹</button><button class="button button-secondary" id="calendar-today">วันนี้</button><button class="icon-button subtle" id="calendar-next" aria-label="เดือนถัดไป">›</button><button class="button button-primary" data-action="add-event">＋ เพิ่มนัดหมาย</button></div></div><div class="calendar-weekdays"><span>จ.</span><span>อ.</span><span>พ.</span><span>พฤ.</span><span>ศ.</span><span>ส.</span><span>อา.</span></div><div class="calendar-grid" id="calendar-grid"></div><div class="upcoming-wrap"><h3>รายการกำหนดการ</h3><div class="event-list" id="calendar-event-list"></div></div></div>
+          <div class="personal-pane" id="personal-todos"><div class="notes-toolbar"><div><h2>เช็กลิสต์งาน</h2><p>งานส่วนตัวและงานที่ต้องติดตาม</p></div><button class="button button-primary" data-action="add-task">＋ เพิ่มงาน</button></div><div id="personal-task-list" class="full-task-list"></div></div>
+          <p class="privacy-hint"><span>♧</span> โน้ต ปฏิทิน และเช็กลิสต์ในต้นแบบนี้จัดเก็บในเบราว์เซอร์ของอุปกรณ์นี้ ยังไม่ซิงก์กับผู้ใช้คนอื่น</p>
+        </section>
+      </div>
+    </main>
+  </div>
+
+  <nav class="mobile-nav" aria-label="เมนูมือถือ"><button class="active" data-view="home"><span>⌂</span><small>ภาพรวม</small></button><button data-view="plan"><span>◎</span><small>แผน</small></button><button data-view="projects"><span>▤</span><small>โครงการ</small></button><button data-view="followup"><span>◷</span><small>ติดตาม</small></button><button data-view="personal"><span>✦</span><small>ส่วนตัว</small></button></nav>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <dialog id="form-dialog" class="form-dialog"><form id="form-content" method="dialog"><div class="dialog-head"><div><p class="eyebrow" id="dialog-eyebrow">NEW ITEM</p><h2 id="dialog-title">เพิ่มรายการ</h2></div><button type="button" class="dialog-close" id="dialog-close" aria-label="ปิด">×</button></div><div id="dialog-fields" class="dialog-fields"></div><div class="dialog-actions"><button type="button" class="button button-secondary" id="dialog-cancel">ยกเลิก</button><button type="submit" class="button button-primary" id="dialog-save">บันทึก</button></div></form></dialog>
+  <dialog id="backup-dialog" class="form-dialog"><form method="dialog"><div class="dialog-head"><div><p class="eyebrow">DATA OPTIONS</p><h2>สำรอง / นำเข้าข้อมูล</h2></div><button type="button" class="dialog-close" data-close-backup aria-label="ปิด">×</button></div><p class="dialog-description">ต้นแบบนี้เก็บข้อมูลในเบราว์เซอร์เครื่องนี้ คุณสามารถดาวน์โหลดไฟล์สำรอง หรือเลือกไฟล์เดิมเพื่อนำข้อมูลกลับเข้าได้</p><div class="backup-actions"><button type="button" class="button button-primary" id="download-backup">ดาวน์โหลดไฟล์สำรอง JSON</button><label class="button button-secondary file-label">เลือกไฟล์ JSON<input type="file" id="restore-file" accept="application/json"></label></div><p class="privacy-hint"><span>ⓘ</span> การเผยแพร่บน GitHub Pages เป็นเว็บไซต์แบบคงที่ ข้อมูลยังไม่ถูกแชร์ข้ามอุปกรณ์</p></form></dialog>
+  <script src="app.js"></script>
+</body>
+</html>
