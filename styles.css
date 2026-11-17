@@ -75,7 +75,7 @@ body { margin:0; background:var(--paper); color:var(--ink); font-family:"Noto Sa
 .plant { position:absolute; color:#c4d6a3; font-size:47px; opacity:.62; }
 .plant-one { right:12%; bottom:27%; transform:rotate(-34deg); } .plant-two { right:38%; bottom:17%; font-size:37px; transform:rotate(18deg); }
 .hero-year { position:absolute; right:31px; bottom:17px; font-size:11px; color:#e8ebd1; letter-spacing:2px; }
-.stat-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:13px; margin:18px 0 27px; }
+.stat-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:13px; margin:18px 0 27px; }
 .stat-card,.panel { background:#fff; border:1px solid var(--line); border-radius:17px; box-shadow:0 4px 16px rgba(24,54,42,.025); }
 .stat-card { padding:15px 16px 13px; min-height:120px; }
 .stat-top { display:flex; align-items:center; gap:8px; }
