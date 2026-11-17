@@ -72,7 +72,10 @@
         <section class="view" id="view-plan">
           <div class="page-intro"><div><p class="eyebrow">PLAN MANAGEMENT · 2571—2575</p><h1>แผนและตัวชี้วัด</h1><p class="muted">เชื่อมประเด็นพัฒนา กลยุทธ์ ตัวชี้วัด และค่าเป้าหมายในแผน 5 ปี</p></div><button class="button button-secondary" id="export-indicators">ดาวน์โหลดตัวชี้วัด</button></div>
           <div class="vision-banner"><span class="vision-icon">✳</span><div><small>วิสัยทัศน์กรมส่งเสริมการเกษตร</small><strong>ภาคการเกษตรมั่นคง เกษตรกรมั่งคั่ง ขับเคลื่อนประเทศให้เปลี่ยนผ่านสู่ระบบการเกษตรอัจฉริยะ และเกษตรมูลค่าสูงอย่างยั่งยืน ภายในปี 2575</strong></div></div>
-          <div class="strategy-list" id="strategy-list"></div>
+          <section class="plan-browser-wrap" aria-labelledby="plan-browser-title">
+            <div class="plan-browser-heading"><div><p class="eyebrow">PLAN PATHWAY</p><h2 id="plan-browser-title">สำรวจแผนตามลำดับ</h2><p>เลือกประเด็นการพัฒนาเพื่อดูกลยุทธ์ แล้วเลือกกลยุทธ์เพื่ออ่านแนวทางดำเนินงาน</p></div><a class="button button-secondary" href="assets/doae-plan-2571-2575.pdf" target="_blank" rel="noopener">เปิดเล่มแผนฉบับเต็ม ↗</a></div>
+            <div id="plan-browser" class="plan-browser" aria-live="polite"></div>
+          </section>
           <div class="section-heading section-heading-table"><div><p class="eyebrow">CORE OUTCOMES</p><h2>ตัวชี้วัดผลลัพธ์หลัก</h2><p class="muted">บันทึกผลล่าสุดและความก้าวหน้าเมื่อได้รับรายงานจากหน่วยงาน</p></div><div class="table-actions"><select id="indicator-filter" aria-label="กรองประเด็น"><option value="all">ทุกประเด็น</option><option value="1">ประเด็นที่ 1</option><option value="2">ประเด็นที่ 2</option><option value="3">ประเด็นที่ 3</option><option value="4">ประเด็นที่ 4</option><option value="5">ประเด็นที่ 5</option></select></div></div>
           <div class="panel table-panel"><div class="table-scroll"><table><thead><tr><th>ตัวชี้วัด</th><th>ค่าเป้าหมายตามแผน</th><th>ความก้าวหน้า</th><th>ผลล่าสุด</th><th></th></tr></thead><tbody id="indicator-rows"></tbody></table></div></div>
           <p class="disclaimer">ค่าเป้าหมายแสดงตามสาระในแผนฉบับที่แนบ การกำหนดวิธีคำนวณ รอบรายงาน และผู้รับผิดชอบรายตัวชี้วัดสามารถเพิ่มเติมในระบบได้</p>
@@ -108,6 +111,7 @@
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
   <dialog id="form-dialog" class="form-dialog"><form id="form-content" method="dialog"><div class="dialog-head"><div><p class="eyebrow" id="dialog-eyebrow">NEW ITEM</p><h2 id="dialog-title">เพิ่มรายการ</h2></div><button type="button" class="dialog-close" id="dialog-close" aria-label="ปิด">×</button></div><div id="dialog-fields" class="dialog-fields"></div><div class="dialog-actions"><button type="button" class="button button-secondary" id="dialog-cancel">ยกเลิก</button><button type="submit" class="button button-primary" id="dialog-save">บันทึก</button></div></form></dialog>
   <dialog id="backup-dialog" class="form-dialog"><form method="dialog"><div class="dialog-head"><div><p class="eyebrow">DATA OPTIONS</p><h2>สำรอง / นำเข้าข้อมูล</h2></div><button type="button" class="dialog-close" data-close-backup aria-label="ปิด">×</button></div><p class="dialog-description">ต้นแบบนี้เก็บข้อมูลในเบราว์เซอร์เครื่องนี้ คุณสามารถดาวน์โหลดไฟล์สำรอง หรือเลือกไฟล์เดิมเพื่อนำข้อมูลกลับเข้าได้</p><div class="backup-actions"><button type="button" class="button button-primary" id="download-backup">ดาวน์โหลดไฟล์สำรอง JSON</button><label class="button button-secondary file-label">เลือกไฟล์ JSON<input type="file" id="restore-file" accept="application/json"></label></div><p class="privacy-hint"><span>ⓘ</span> การเผยแพร่บน GitHub Pages เป็นเว็บไซต์แบบคงที่ ข้อมูลยังไม่ถูกแชร์ข้ามอุปกรณ์</p></form></dialog>
+  <script src="plan-data.js"></script>
   <script src="app.js"></script>
 </body>
 </html>
